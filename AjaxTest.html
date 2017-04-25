@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="PageElement/jquery-3.1.1.js"></script>
+    <script>
+
+        //*********************详细资料请查阅实验楼JQ入门Ajax篇***************************************
+
+
+        /*  js版本
+        $(function() {
+            var xhr = new AjaxXmlHttpRequest();
+            $("#btnAjaxOld").click(function(event) {
+                var xhr = new AjaxXmlHttpRequest();
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState == 4 && xhr.status==200) {
+                        document.getElementById("divResult").innerHTML = xhr.responseText;
+                    }
+                }
+                //由于涉及到同源策略，需要服务器端的支持
+                xhr.open("GET", "data/AjaxGetCityInfo.aspx?resultType=html", true);
+                xhr.send(null);
+            });
+        });
+
+        //跨浏览器获取 XmlHttpRequest 对象
+        function AjaxXmlHttpRequest() {
+            var xmlHttp;
+            try {
+                // Firefox, Opera 8.0+, Safari
+                xmlHttp = new XMLHttpRequest();
+            } catch (e) {
+                // Internet Explorer
+                try {
+                    xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+                } catch (e) {
+                    try {
+                        xmlHttp = new ActiveXObject("Micros oft.XMLHTTP");
+                    } catch (e) {
+                        alert("Your browser nonsupport AJAX！");
+                        return false;
+                    }
+                }
+            }
+            return xmlHttp;
+        }
+        */
+        //JQ版本
+        // Ajax的load()方法
+        $(function() {
+            $("#btnAjaxGet").click(function(event) {
+                //发送 Get 请求
+                $("#divResult").load("../data/AjaxGetMethod.aspx?param=btnAjaxGet_click" + "&timestamp=" + (new Date()).getTime());
+            });
+
+            $("#btnAjaxPost").click(function(event) {
+                //发送 Post 请求
+                $("#divResult").load("../data/AjaxGetMethod.aspx", { "param": "btnAjaxPost_click" });
+            });
+
+            $("#btnAjaxCallBack").click(function(event) {
+                //发送 Post 请求, 返回后执行回调函数.
+                $("#divResult").load("../data/AjaxGetMethod.aspx", { "param": "btnAjaxCallBack_click" }, function(responseText, textStatus, XMLHttpRequest)
+                {
+                    responseText = " Add in the CallBack Function! <br/>" + responseText
+                    $("#divResult").html(responseText); //或者: $(this).html(responseText);
+                });
+            });
+
+            $("#btnAjaxFiltHtml").click(function(event) {
+                //发送 Get 请求, 从结果中过滤掉 "anshan" 这一项
+                $("#divResult").load("../data/AjaxGetCityInfo.aspx?resultType=html" + "&timestamp=" + (new Date()).getTime() + " ul>li:not(:contains('anshan'))");
+            });
+
+            //Ajax的get(),post(),ajax()
+            $.ajaxSetup({
+                url: "../data/AjaxGetMethod.aspx",
+                data: { "param": "ziqiu.zhang" },
+                global: false,
+                type: "POST",
+                success: function(data, textStatus) {
+                    $("#divResult").html(data);
+                }
+            });
+            $("#btnAjax").click(function(event) { $.ajax(); });
+            $("#btnGet").click(function(event) { $.get(); });
+            $("#btnPost").click(function(event) { $.post(); });
+            $("#btnGet2").click(function(event) { $.get("../data/AjaxGetMethod.aspx",{ "param": "other" }); });
+
+        });
+    </script>
+
+</head>
+<body>
+<!--
+    <button id="btnAjaxOld">original ajax call</button>
+    <div id="divResult"></div>
+  -->
+<button id="btnAjaxGet">use load execute get request</button><br />
+<button id="btnAjaxPost">use load execute post request</button><br />
+<button id="btnAjaxCallBack">use has callback load method</button><br />
+<button id="btnAjaxFiltHtml">use selector filter response HTML</button>
+<br />
+<button id="btnAjax">nontransfer param call ajax() method</button><br />
+<button id="btnGet">nontransfer param call get() method</button><br />
+<button id="btnPost">nontransfer param call post() method</button><br />
+<button id="btnGet2">transfer param call get() method , use global default callback</button><br />
+<br />
+
+<div id="divResult"></div>
+
+</body>
+</html>
