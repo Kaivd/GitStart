@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style>
+            *{
+                transition: all 1s;
+            }
+            body{
+                margin: 0;
+                padding: 0;
+                background-color: orange;
+            }
+            #wrapper{
+                margin-right: auto;
+                margin-left: auto;
+                width: 96%;
+                max-width: 1200px;
+            }
+            header{
+
+                margin-right: 1.0416667%;
+                margin-left: 1.0416667%;
+                width: 97.9166667%;
+            }
+            #logo{
+                display: block;
+                padding-top: 75px;
+                color: #0d0c0c;
+                text-transform: uppercase;
+                font-family: Verdana, Arial,"Lucida Gande", sans-serif;
+                font-size: 3em;
+            }
+            #logo span{
+                color: #dfdada;
+            }
+            nav{
+                padding-bottom: 25px;
+                margin-top: 26px;
+                margin-left: -1.0416667%;
+                padding-right: 1.0416667%;
+                width: 97.9166667%;
+            }
+            nav ul li{
+                display: inline-block;
+                margin-right: 2.6595745%;
+            }
+            nav ul li a{
+                height: 42px;
+                line-height: 42px;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-family: Verdana, Arial, sans-serif;
+                font-size: 27px;
+                color: black;
+            }
+            #content{
+                margin-top: 58px;
+                margin-right: 1.0416667%;
+                float: right;
+                width: 72.7083333%;
+            }
+            #content h1{
+                font-family: Verdana, Arial,Helvetica, sans-serif;
+                text-transform: uppercase;
+                font-size: 4.3125em;                           /* 69/16= */
+            }
+            #content h1 em{
+                display: block;
+                line-height: 1.052631579em;
+                color: #757474;
+                font-size: 0.550724638em;    /* 38/69= */
+            }
+            .oscarMain{
+                float: left;
+                margin-top: -28px;
+                width: 40.830945558%;    /* 300 / 698 */
+
+            }
+            #content p{
+                font-size: 1em;
+            }
+            #content a{
+                text-decoration: none;
+                font-size: 2.25em;
+                background-color: #b01c20;
+                border-radius: 8px;
+                color: #ffffff;
+                padding: 3%;
+                float: left;
+                background: linear-gradient(90deg,#b01c20 0%,#f15c60 100%);
+                margin-top: 30px;
+                box-shadow: 5px 5px 5px hsla(0,0%,26.6667%,0.8);
+                text-shadow: 0px 1px white;
+                border: 1px solid #bfbfbf;
+                transition: all 1s ease-in-out 0s;
+                transform: scale(0.5) skew(9deg);
+
+            }
+            #content a:hover{
+                border: 1px solid #000000;
+                color: #000000;
+                text-shadow: 0px 1px white;
+            }
+            aside{
+                border-right-color: #e8e8e8;
+                border-right-style: solid;
+                border-right-width: 2px;
+                margin-top: 58px;
+                padding-right:1.0416667%;
+                margin-right: 0.9375%;
+                margin-left: 1.0416667%;
+                float: left;
+                width: 22.7083333%;
+            }
+            #sidebar .sideBlock{
+                display: block;
+            }
+            img{
+                max-width: 100%;
+            }
+            .sideBlock img{
+                max-width: 45%;
+            }
+            .unSung a:nth-child(odd) img{
+                transform: rotate(3deg);
+                animation: swing 1s 5 ease-in;
+            }
+            .unSung a:nth-child(even) img{
+                transform: rotate(-3deg);
+                animation: swing 1s 5 0.3s ease-in;
+            }
+            .overHyped a:nth-child(odd) img{
+                transform: rotate(3deg);
+                animation: swing 1s 5 ease-in;
+            }
+            .overHyped a:nth-child(even) img{
+                transform: rotate(-3deg);
+                animation: swing 1s 5 0.3s ease-in;
+            }
+            footer{
+                float: left;
+                margin-top: 20px;
+                margin-right: 1.0416667%;
+                margin-left: 1.0416667%;
+                clear: both;
+                width: 97.9166667%;
+            }
+            @media screen and (min-width: 1001px) and (max-width: 1080px){
+                #navigation ul li a{ font-size: 1.4em; }
+            }
+            @media screen and (min-width: 805px) and (max-width: 1000px){
+                #navigation ul li a{ font-size: 1.25em; }
+            }
+            @media screen and (min-width: 769px) and (max-width: 804px){
+                #navigation ul li a{ font-size: 1.1em; }
+
+            }
+            @media screen and (max-width: 769px){
+                aside{
+                    display: none;
+                }
+                #content{
+                    margin-left: 0;
+                }
+            }
+            .Qcontainer {
+                height: 100%;
+                width: 28%;
+                position: relative;
+                -webkit-perspective: 800px;
+                float: left;
+                margin-right: 2%;
+
+            }
+            .film{
+                width: 100%;
+                height: 15em;
+                -webkit-transform-style: preserve-3d;
+                -moz-transform-style: preserve-3d;
+                -ms-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+                -webkit-transition: 1s;
+                -moz-transition: 1s;
+                -ms-transition: 1s;
+                -o-transition: 1s;
+                transition: 1s;
+            }
+        .Qcontainer:hover .film{
+            -webkit-transform: rotateY(180deg);
+            -moz-transform: rotateY(180deg);
+            -ms-transform: rotateY(180deg);
+            -o-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+        }
+        .face{
+            position: absolute;
+            -webkit-backface-visibility: hidden;
+        }
+        .front{
+            z-index: 5;
+        }
+        .Qcontainer:hover .front{
+            z-index: 0;
+        }
+        .back{
+            width: 66%;
+            height: 127%;
+            -webkit-transform: rotateY(180deg);
+            -moz-transform: rotateY(180deg);
+            -ms-transform: rotateY(180deg);
+            -o-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+            background: #3b3b3b;
+            background: linear-gradient(top,rgba(0,0,0,0.65),rgba(0,0,0,0) 100%);
+            padding: 15%;
+        }
+        .back h5{
+            font-size: 4em;
+            color: #f2050b;
+            text-align: center;
+            animation: warning 1.5s infinite ease-in;
+        }
+        @keyframes warning {
+            0% {
+                text-shadow: 0px 0px 4px #000000;
+            }
+
+            50% {
+                text-shadow: 0px 0px 20px #000000;
+            }
+
+            100%{
+                text-shadow: 0px 0px 4px #000000;
+            }
+        }
+
+        @keyframes swing {
+            from{
+                transform: rotate(3deg);
+            }
+            20%{
+                transform: rotate(7deg);
+            }
+            60%{
+                transform: rotate(10deg);
+            }
+            80%{
+                transform: rotate(7deg);
+            }
+            to{
+                transform: rotate(3deg);
+            }
+        }
+    </style>
+
+
+
+</head>
+<body>
+        <div id="wrapper">
+            <header>
+                <div id="logo" role="banner">
+                    and the winner is<span>n't...</span>
+                </div>
+                <nav role="navigation">
+                    <ul>
+                        <li><a href="#">why?</a></li>
+                        <li><a href="#">Synopsis</a></li>
+                        <li><a href="#">Stills/Photos</a></li>
+                        <li><a href="#">Videos/clips</a></li>
+                        <li><a href="#">Quotes</a></li>
+                        <li><a href="#">Quiz</a></li>
+                    </ul>
+                 </nav>
+            </header>
+
+            <aside>
+                <section role="complementary">
+                <div class="sideBlock unSung">
+                    <h4>Unsung heroes...</h4>
+                    <a href="#"><img src="img/2.jpg"  alt=""></a>
+                    <a href="#"><img src="img/2.jpg" alt=""></a>
+                </div>
+                </section>
+                <section role="complementary">
+                <div class="sideBlock overHyped">
+                    <h4>Overhyped nonsense...</h4>
+                    <a href="#"><img src="img/2.jpg" alt="" ></a>
+                    <a href="#"><img src="img/2.jpg" alt="" ></a>
+                </div>
+                </section>
+            </aside>
+
+            <div id="content" role="main">
+                <img src="img/oscarMain0.png" alt="" class="oscarMain" >
+                <h1>Every year <em>when I watch the Oscars I'm annoyed...</em></h1>
+                <p>that films like <b>Hong Kong</b>,<b>Moulin Rouge</b> and Munich get the statue whilst
+                the real cinematic heroes lose out. Not very Hollywood is it?</p>
+                <i>We're here to put things right.</i></p>
+                <a href="#">those should have won >></a>
+                <!--<section class="Qcontainer">-->
+                    <!--<div class="film">-->
+                        <!--<div class="face front">-->
+                            <!--<img src="img/5.jpg" alt="">-->
+                        <!--</div>-->
+                        <!--<div class="face back"><h5>HOT!</h5></div>-->
+                    <!--</div>-->
+                <!--</section>-->
+            </div>
+
+            <footer role="contentinfo">
+                <p>Note: our opinion is absolutely correct.You are wrong,even if you think you are right. That's a fact. Deal with it.</p>
+            </footer>
+        </div>
+</body>
+</html>

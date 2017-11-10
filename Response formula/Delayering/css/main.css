@@ -1,0 +1,301 @@
+.clearfix::after{
+	content: '';
+	display: block;
+	clear: both;
+}
+nav{
+	background: transparent;
+	height: 50px;
+}
+
+#banner{
+	background: rgba(0, 0, 0, 0.1);
+	height: 900px;
+	color: #fff;
+}
+
+nav ul{
+	margin: 0;
+	list-style: none;
+	float: right;
+}
+nav .logo{
+	float: left;
+	font-size: 1.4em;
+	font-weight: 700;
+	letter-spacing: 1px;
+	margin-left: 2rem;
+	
+}
+nav .logo a{
+	color: #fff;
+	text-decoration: none;
+	display: block;
+}
+
+nav ul li,nav .logo{
+	display: inline-block;
+	line-height: 50px;
+	margin-right: 1.5rem;
+}
+nav ul li a{
+	display: inline-block;
+	line-height: inherit;
+	text-decoration: none;
+	color: #fff;
+}
+
+#banner .inner{
+	max-width: 300px;
+	text-align: center;
+	margin: 0 auto;
+	position: relative;
+	top: 240px;
+}
+
+
+#banner .inner h1{
+	margin: 0;
+	border-top: 3px solid #fff;
+	border-bottom: 3px solid #fff;
+	padding: 20px;
+}
+
+button{
+	border: none;
+	background: #333;
+	color: #eee;
+	padding: 10px;
+}
+#banner .inner button{
+	padding: 14px 20px;
+}
+#banner .inner .sub_content{
+	line-height: 30px;
+	
+}
+
+#banner .inner .more{
+	margin-top: 313px;
+}
+
+.sub_content{
+	font-size: 1.2em;
+	margin: 30px 0;
+}
+
+.hr{
+	width: 100%;
+	height: 2px;
+	margin: 20px auto;
+}
+
+.green-section{
+	background: #089DB0;
+	text-align: center;
+	color: #fff;
+	padding: 100px 0;
+}
+
+.wrapper{
+	max-width: 1080px;
+	margin: 0 auto;
+}
+
+.green-section .wrapper h1{
+	margin: 0;
+}
+.green-section .wrapper .hr{
+	background: #078494;
+	width: 60%;
+}
+.green-section .icon-group{
+	margin-top: 60px;
+}
+.green-section .icon-group .icon{
+	display: inline-block;
+	width: 4rem;
+	height: 4rem;
+	transform: rotate(45deg);
+	margin: 20px;
+	border: 1px solid #fff;
+	background: #80dcd8c4;
+}
+.gray-section{
+	background: #0f796be6;
+	color: #fff;
+}
+
+.article-preview > div{
+	float: left;
+	font-size: 0;
+}
+
+.gray-section .img-section{
+	width: 45%;
+}
+
+.gray-section .img-section img{
+	width: 100%;
+}
+
+.gray-section .text-section{
+	width: 55%;
+	position: relative;
+	height: 278px;
+}
+
+.article-preview::after{
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.gray-section .text-section .text-part{
+	position: absolute;
+	top: 68px;
+	left: 50px;
+}
+.gray-section .text-section .text-part h2{
+	font-size: 1.2rem;
+}
+.gray-section .text-section .text-part .sub_content{
+	font-size: 1.1rem;
+}
+.gray-section .text-section .text-part p{
+	font-size: 1rem;
+}
+
+h2{
+	margin: 0;
+}
+.purple-section{
+	background: #1aa0e2d1;
+	color: #fff;
+	padding: 80px;
+}
+.purple-section .head-wrapper{
+	text-align: center;
+}
+
+.purple-section .head-wrapper .hr{
+	background: #5719b9;
+	width: 60%;
+}
+
+.card{
+	float: left;
+	width: 50%;
+	min-height: 300px;
+	padding: 50px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	/* border: 1px solid black; */
+}
+
+.card:first-child{
+	background: rgba(0, 0, 0, 0.04);
+}
+.card:nth-child(2){
+	background: rgba(0, 0, 0, 0.08);
+}
+.card:nth-child(3){
+	background: rgba(0, 0, 0, 0.12);
+}
+.card:nth-child(4){
+	background: rgba(0, 0, 0, 0.16);
+}
+.card:nth-child(5){
+	background: rgba(0, 0, 0, 0.2);
+}
+.card:nth-child(6){
+	background: rgba(0, 0, 0, 0.24);
+}
+
+
+
+footer{
+	background: transparent;
+	color: #fff;
+	padding: 30px;
+	min-height: 200px;
+	text-align: center;
+}
+
+ul.share-group{
+	display: block;
+	margin: 10px auto;
+	max-width: 1080px;
+}
+
+footer .share-group li{
+	display: inline-block;
+	margin-right: 0.5rem;
+}
+
+footer .copy{
+	display: block;
+	padding: 20px 0;
+}
+
+
+.main-wrapper{
+	background: #444 url('../img/小鲨鲨.jpg');
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	overflow: hidden;
+}
+
+
+.mask{
+	display: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.3);
+}
+
+#sidebar{
+	position: fixed;
+	top: 0;
+	right: -15rem; /*  浏览器外面 */
+	bottom: 0;
+	background: #333;
+	width: 15rem;
+	padding: 20px 0;
+	transition: right 0.5s; /* 动画测试 */
+}
+
+#sidebar ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#sidebar ul a{
+	color: #fff;
+	display: block;
+	text-decoration: none;
+	padding: 20px 30px;
+
+}
+
+#sidebar ul a:hover{
+	background: #444;
+}
+
+.back-to-top{
+	position: fixed;
+	bottom: 30px;
+	right: 20px;
+	border: 1px solid #888;
+}
+
+.back-to-top:hover{
+	background: rgba(0, 0, 0, 0.8);
+}
